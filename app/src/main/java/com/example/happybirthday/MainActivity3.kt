@@ -14,9 +14,8 @@ class MainActivity3 : AppCompatActivity() {
 
 		rollButton.setOnClickListener {
 			rollDice()
-			val resulTextView: TextView = findViewById(R.id.textView3)
 			rollButton.text = "¡Lanzaste los dados!"
-			val toast: Toast = Toast.makeText(this, "¡Lanzaste los dados!", Toast.LENGTH_LONG)
+			val toast: Toast = Toast.makeText(this, "¡Lanzaste los dados!", Toast.LENGTH_SHORT)
 			toast.show()
 		}
 	}
@@ -24,7 +23,9 @@ class MainActivity3 : AppCompatActivity() {
 	private fun rollDice() {
 		val dice = Dice(6)
 		val (numDados, texto) = dice.roll()
+		//TextView de arriba
 		val cuantosDadosTiraste: TextView = findViewById(R.id.textView4)
+		//TextView de abajo
 		val resultadoDadosTiraste: TextView = findViewById(R.id.textView3)
 		cuantosDadosTiraste.text = "Felicidades, lanzaste $numDados"
 		resultadoDadosTiraste.text = texto
